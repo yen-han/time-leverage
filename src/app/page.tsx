@@ -4,8 +4,10 @@ import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import Calendar from "@/app/components/Calendar";
 import TimeLine from "@/app/components/TimeLine/TimeLine";
-import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import StatisticsByTag from "./components/StatisticsByTag/StatisticsByTag";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -13,17 +15,16 @@ export default function Home() {
     <main className={styles.main}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} alignItems="center">
-          <Box
+          <Container
             sx={{
-              width: 300,
-              height: 300,
-              backgroundColor: "primary.dark",
-              "&:hover": {
-                backgroundColor: "primary.main",
-                opacity: [0.9, 0.8, 0.7],
-              },
+              position: { xs: "none", md: "fixed" },
+              my: 10,
+              left: "4%",
+              width: { xs: "70%", md: "40%" },
             }}
-          ></Box>
+          >
+            <StatisticsByTag />
+          </Container>
         </Grid>
         <Grid item xs={12} md={6}>
           <Calendar />
