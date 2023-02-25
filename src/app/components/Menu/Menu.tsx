@@ -28,7 +28,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ bgcolor: "#123C69" }}>
         <Toolbar disableGutters>
           <AccessTimeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
