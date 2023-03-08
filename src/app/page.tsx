@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import Calendar from "@/app/components/Calendar";
@@ -28,14 +27,6 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Calendar />
-          <TimeLine />
-          <TimeLine />
-          <TimeLine />
-
-          <TimeLine />
-          <TimeLine />
-          <TimeLine />
-          <TimeLine />
           <TimeLine />
         </Grid>
       </Grid>
