@@ -102,3 +102,6 @@ a {
     color-scheme: dark;
   }
 }
+.tag:hover{
+  opacity: 1;
+}
