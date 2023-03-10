@@ -10,8 +10,12 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-
-const pages = ["Home", "Statistics", "Tags"];
+import Link from "@mui/material/Link";
+const pages = [
+  { title: "Home", url: "/" },
+  { title: "Statistics", url: "Statistics" },
+  { title: "Tags", url: "Tags" },
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -27,8 +31,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" sx={{ bgcolor: "#123C69" }}>
+    <AppBar position="static" sx={{ bgcolor: "#123C69" }}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AccessTimeIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
@@ -83,8 +87,11 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Link href={page.url} underline="none" color="white">
+                    {page.title}
+                  </Link>
+                  {/* <Typography textAlign="center">{page}</Typography> */}
                 </MenuItem>
               ))}
             </Menu>
@@ -110,11 +117,13 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ m: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link href={page.url} underline="none" color="white">
+                  {page.title}
+                </Link>
               </Button>
             ))}
           </Box>
