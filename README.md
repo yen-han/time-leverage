@@ -8,8 +8,7 @@
 - NextJS
 - React
 - TypeScript
-- MongoDB
-- REST API
+- MongoDB(TBD)
 - Material UI
 - CSS
 
